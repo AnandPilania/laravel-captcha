@@ -1,0 +1,22 @@
+{
+    "name": "anandpilania/laravel-captcha",
+    "description": "Captcha validation package for laravel.",
+	"keywords": ["laravel", "anandpilania", "captcha"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anand Pilania",
+            "email": "pilaniaanand@gmail.com"
+        }
+    ],
+	"minimum-stability": "stable",
+    "require": {
+		"anandpilania/support": "self.version"
+	},
+	"autoload": {
+        "psr-4": {
+            "AP\\Captcha\\": ""
+        }
+    },
+	"suggest": {}
+}
