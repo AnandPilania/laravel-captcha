@@ -2,7 +2,7 @@
 
 namespace AP\Captcha;
 
-use AP\Support\ServiceProvider as Base;
+use Illuminate\Support\ServiceProvider as Base;
 
 class ServiceProvider extends Base
 {
@@ -41,6 +41,9 @@ class ServiceProvider extends Base
     protected function registerRoutes($app)
     {
         $app['router']->group(['prefix' => 'captcha', 'middleware' => 'web'], function ($router) use ($app){
+			$router->get('/widget/{length?}', function($length = 4) {
+				return Captcha::build($length, true);
+			});
             $router->get('/refresh', function() use($app){
                 return response()->json(['captcha_code' => Captcha::refresh(count($app['request']->captcha_length))]);
             });
